@@ -1,0 +1,2 @@
+xs create-service managed-hana hdi-shared tenant-example-container
+xs bind-service <app-name> tenant-example-container

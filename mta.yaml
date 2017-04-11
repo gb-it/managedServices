@@ -1,0 +1,21 @@
+ID: managedServices
+_schema-version: '2.0'
+version: 0.0.1
+
+modules:
+ - name: nodeJSManaged
+   type: nodejs
+   path: nodeJSManaged
+   provides:
+    - name: nodeJSManaged_api
+      properties:
+         url: ${default-url}
+   requires:
+    - name: tenant-example-container
+     
+resources:
+  - name: tenant-example-container
+    properties:
+      tenant-example-container-name: '${service-name}'
+    type: com.sap.xs.managed-hdi-container
+
